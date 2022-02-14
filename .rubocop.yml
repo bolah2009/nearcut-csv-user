@@ -24,6 +24,10 @@ Metrics/AbcSize:
     - 'app/controllers/*'
     - 'app/models/*'
   Max: 50
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/ClassLength:
   Max: 150
 
