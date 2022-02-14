@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Nearcut::StrongChecker do
   subject { described_class.new(params).no_of_changes }
 
-  context 'with all conditions satified' do
+  context 'with all conditions satisfied' do
     let(:expected_changes) { 0 }
 
     context 'with case - 1' do
