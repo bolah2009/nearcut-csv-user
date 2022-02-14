@@ -29,11 +29,15 @@ RSpec.describe User, type: :model do
       end
 
       context 'with weak password that requires 2 change' do
+        let(:allowed_values) do
+          %w[63738382728 GHDHD*@*@**@HDH
+             djjdhdkk&@*@*ndn SSS728378218
+             aaahffjnslfoif9 LLLlfkfkfkkgD]
+        end
+
         it do
           expect(user)
-            .not_to allow_values(*%w[63738382728 GHDHD*@*@**@HDH
-                                     djjdhdkk&@*@*ndn SSS728378218
-                                     aaahffjnslfoif9 LLLlfkfkfkkgD])
+            .not_to allow_values(*allowed_values)
             .for(:password)
             .with_message("Change 2 characters of Bola's password")
         end
