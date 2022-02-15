@@ -1,0 +1,20 @@
+<h1>Users</h1>
+
+<section class="form">
+  <h2>Upload a csv file to add new users</h2>
+  <%= form_with do |f| %>
+    <%= f.file_field :csv, accept: 'text/csv', required: true %>
+    <%= f.submit 'Submit' %>
+  <% end %>
+</section>
+
+<% if @results.present? %>
+<section class="results">
+  <h3>Result of user's upload</h3>
+  <ul class="result-list">
+    <% @results.each do |result| %>
+      <li> <%= result %>
+    <% end %>
+  </ul>
+</section>
+<% end  %>
