@@ -12,7 +12,7 @@ RSpec.describe 'csv_service /', type: :feature do
     before do
       visit '/'
       within 'form' do
-        attach_file 'csv', 'users.csv'
+        attach_file 'csv', Rails.root.join('spec/fixtures/files/users.csv')
         click_on 'Submit'
       end
     end

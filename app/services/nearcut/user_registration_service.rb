@@ -18,7 +18,7 @@ module Nearcut
 
         name, password = current_line
 
-        @user = User.create(name:, password:)
+        @user = User.create(name: name, password: password) # rubocop:disable Style/HashSyntax
         if @user.save
           results.push("#{name} was successfully saved")
         else
